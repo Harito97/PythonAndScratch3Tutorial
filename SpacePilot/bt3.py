@@ -15,6 +15,8 @@ def check_prime(number:int):
     is_prime = True
     # for j in range(2, int(number**0.5) + 1):
     for j in range(2, int(sqrt(number)) + 1):
+        # j = 2, 3, 4, ..., sqrt(number) + 1
+        # 3 5 7 9 
         if number % j == 0:
             is_prime = False
             break

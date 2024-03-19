@@ -12,6 +12,13 @@ ship_img = pygame.transform.scale(ship_img, (400, 200))
 
 pygame.display.set_icon(ship_img)                                       # đặt logo icon của chương trình trên thanh tiêu đề 
 
+# Thiết lập tiếng nổ kết thúc trò chơi
+explosion_sound = pygame.mixer.Sound("resources/397691__morganpurkis__explosion.wav")
+
+# Thiết lập vụ nổ
+explosion_img = pygame.image.load("resources/bumm.png")
+explosion_img = pygame.transform.scale(explosion_img, (400, 200))
+
 # setup background
 bg_img = pygame.image.load('resources/universe_15.jpg') # load ảnh nền vô 
 bg_img = pygame.transform.scale(bg_img, (720, 480))     # scale hình ảnh cho khít cho đẹp 
@@ -62,23 +69,23 @@ while not game_over:
         if event.type == pygame.KEYUP:
             x_change, y_change = 0, 0
         
-        # distance = ((ship_x - meteor_x) ** 2 + (ship_y - meteor_y) ** 2) ** (1/2)
-        distance = sqrt((ship_x - meteor_x) ** 2 + (ship_y - meteor_y) ** 2)
-        
-        if distance < 70:
-            game_over = True 
-        
-        if meteor_y > 480:
-            # reset lai toa do truc y
-            meteor_y = 0
-            # đặt giá trị random cho tọa độ x
-            meteor_x = random.randint(0, 720)
-            score += 1  # update them diem cho nguoi choi -> score = score + 1
+    # distance = ((ship_x - meteor_x) ** 2 + (ship_y - meteor_y) ** 2) ** (1/2)
+    distance = sqrt((ship_x - meteor_x) ** 2 + (ship_y - meteor_y) ** 2)
+    
+    if distance < 70:
+        game_over = True 
+    
+    if meteor_y > 480:
+        # reset lai toa do truc y
+        meteor_y = 0
+        # đặt giá trị random cho tọa độ x
+        meteor_x = random.randint(0, 720)
+        score += 1  # update them diem cho nguoi choi -> score = score + 1
       
     ship_x += x_change              # update giá trị của tọa độ x của con tàu 
     ship_y += y_change
-    meteor_y += 10
-    # start_y + # bvn1. 
+    meteor_y += 2
+    
     screen.blit(bg_img, (0, 0))     # đặt ảnh nền vô cửa sổ chương trình 
     screen.blit(ship_img, (ship_x, ship_y)) # vẽ tàu lên trên background
     screen.blit(meteor_img, (meteor_x, meteor_y)) # vẽ thiên thạch 
@@ -86,3 +93,8 @@ while not game_over:
     screen.blit(score_render, (0, 0))
 
     pygame.display.update()         # update sự hiển thị của đối tượng pygame 
+
+# Game over 
+explosion_sound.play(1, 0, 402)
+screen.blit(explosion_img, (meteor_x, meteor_y))
+pygame.display.update()         # update sự hiển thị của đối tượng pygame 

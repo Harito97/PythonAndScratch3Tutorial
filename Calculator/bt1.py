@@ -45,19 +45,45 @@ def tinh_bieu_thuc_tong_so_chinh_phuong(n: int):
     # 1 + 4 + 9 + 16 + 25 + 36 + 49 + ... + (math.sqrt(n)) ** 2
     sum_number = 0
     for i in range(1, int(sqrt(n)) + 1):
-        sum_number += i ** 2
-    return sum_number 
+        sum_number += i**2
+    return sum_number
+
 
 def check_prime(n: int):
     if n < 2:
-        return False 
+        return False
     for i in range(2, int(sqrt(n)) + 1):
         if n % i == 0:
             return False
     return True
-    
+
+
 def tinh_tong_cac_so_nguyen_to_tu_1_den_n(n: int):
-    ...
+    result = 0
+    if n < 2:
+        return result
+    for i in range(2, n + 1):
+        if check_prime(i):
+            result += i
+    return result
+
+
+def check_so_hoan_hao(n: int): 
+    if n <= 0:
+        return False
+    result = 0
+    for i in range(1, n):
+        if n % i == 0:
+            result += i
+    return result == n
+
+def print_cac_so_hoan_hao_tu_1_den_n(n: int):
+    result = []
+    for i in range(n):
+        if check_so_hoan_hao(i):
+            result.append(i)
+    print(result)
+
 
 if __name__ == "__main__":
     # number = int(input("Nhap vao so number de tinh giai thua cua number: "))
@@ -82,5 +108,13 @@ if __name__ == "__main__":
     # number = int(input('Nhap vao 1 so number de tinh tong cac so chinh phuong tu 1 den n: '))
     # print(tinh_bieu_thuc_tong_so_chinh_phuong(number))
 
-    number = int(input('Nhap vao 1 so number de kiem ra no co la 1 so nguyen to khong: '))
-    print(check_prime(n=number))
+    # number = int(input('Nhap vao 1 so number de kiem ra no co la 1 so nguyen to khong: '))
+    # print(check_prime(n=number))
+
+    # number = int(
+    #     input("Nhap vao 1 so number de tinh tong cac so nguyen to tu 1 den no: ")
+    # )
+    # print(tinh_tong_cac_so_nguyen_to_tu_1_den_n(n=number))
+
+    number = int(input('Nhập vào số n - test bài số hoàn hảo: '))
+    print_cac_so_hoan_hao_tu_1_den_n(n=number)

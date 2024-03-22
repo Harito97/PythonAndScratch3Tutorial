@@ -7,3 +7,9 @@ if __name__ == '__main__':
     data = input('Nhap vao n, d, x1: ').split(' ')
     n, d, x1 = int(data[0]), int(data[1]), int(data[2])
     print(sum(n, d, x1))
+
+# n = int(input("Nhập vào 1 số n:"))
+# total = 0
+# for i in range(1, n + 1):
+#     total += i 
+# print(total)

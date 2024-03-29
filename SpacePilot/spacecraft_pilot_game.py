@@ -1,7 +1,4 @@
-import math
-import random
-import sys
-import pygame
+import math, random, sys, pygame
 
 # Khởi tạo đối tượng pygame
 pygame.init()
@@ -50,6 +47,7 @@ explosion_img = pygame.transform.scale(explosion_img, (400, 200))
 # Thiết lập flag
 game_over = False
 score = 0
+number_life = 3
 
 while True:
     # Xử lý event điều khiển tàu bằng bấm phím
@@ -96,11 +94,12 @@ while True:
             (spacecraft_core_x - meteor_core_x) ** 2
             + (spacecraft_core_y - meteor_core_y) ** 2
         )
-        if distance < 100:
+        if distance < 100 or number_life == 0:
             # <226 vì khoảng cách lớn nhất có va chạm là 25*sqrt(58) + 25*sqrt(2) gần bằng 226
             # <100 vì ước lượng (thực tế khi chơi) - do không phải hình vuông với hình vuông giao nhau
             # đồng thời để đảm bảo độ dễ
             game_over = True
+            number_life -= 1
             explosion_sound.play(1, 0, 402)
         screen.blit(meteor_img, (meteor_x, meteor_y))
         screen.blit(spacecraft_img, (start_x, start_y))

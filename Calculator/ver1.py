@@ -3,6 +3,7 @@
 
 # from tkinter import Button
 import tkinter as tk
+from tkinter import Tk, Entry, Button
 
 wd = tk.Tk()
 wd.title("Casio Calculator")

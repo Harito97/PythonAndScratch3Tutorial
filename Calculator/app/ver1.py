@@ -1,9 +1,8 @@
 # Minh  Lớp 8 - Sài Gòn
 # bắt đầu học buổi 4 (23/02/2024)
 
-# from tkinter import Button
+# from tkinter import Tk, Entry, Button
 import tkinter as tk
-from tkinter import Tk, Entry, Button
 
 wd = tk.Tk()
 wd.title("Casio Calculator")

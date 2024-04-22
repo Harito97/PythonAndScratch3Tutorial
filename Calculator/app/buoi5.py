@@ -28,6 +28,9 @@ def bt_click(number: float):
 
 # define operator
 def add():
+    if e.get() == '':
+        print('Number 1 is None!')
+        return
     global num1
     num1 = float(e.get())
     e.delete(0, tk.END)
@@ -36,6 +39,9 @@ def add():
 
 
 def sub():
+    if e.get() == '':
+        print('Number 1 is None!')
+        return
     global num1
     num1 = float(e.get())
     e.delete(0, tk.END)
@@ -44,6 +50,9 @@ def sub():
 
 
 def mul():
+    if e.get() == '':
+        print('Number 1 is None!')
+        return
     global num1
     num1 = float(e.get())
     e.delete(0, tk.END)
@@ -52,6 +61,9 @@ def mul():
 
 
 def div():
+    if e.get() == '':
+        print('Number 1 is None!')
+        return
     global num1
     num1 = float(e.get())
     e.delete(0, tk.END)
@@ -60,18 +72,37 @@ def div():
 
 
 def double():
+    if e.get() == '':
+        print('Number 1 is None!')
+        return
     global num1
     num1 = float(e.get())
     e.delete(0, tk.END)
     global operator
     operator = "** 2"
 
+
 def sqrt():
+    if e.get() == '':
+        print('Number 1 is None!')
+        return    
     global num1
     num1 = float(e.get())
     e.delete(0, tk.END)
     global operator
     operator = "** 0.5"
+
+
+def ttd():
+    if e.get() == '':
+        print('Number 1 is None!')
+        return
+    global num1
+    num1 = float(e.get())
+    e.delete(0, tk.END)
+    global operator
+    operator = "ttd"
+
 
 # define calculation
 def equal():
@@ -81,14 +112,14 @@ def equal():
     if operator == None:
         print("Operator = None!")
         return
-    elif not (operator == '** 2' or operator == '** 0.5'):
+    elif not (operator == "** 2" or operator == "** 0.5" or operator == "ttd"):
         temp = e.get()
         if temp == "":
             print("Case no input!")
             return
         else:
             num2 = float(e.get())
-    
+
     e.delete(0, tk.END)
     if operator == "+":
         e.insert(0, num1 + num2)
@@ -98,11 +129,12 @@ def equal():
         e.insert(0, num1 * num2)
     elif operator == "/":
         e.insert(0, num1 / num2)
-    elif operator == '** 2':
-        e.insert(0, num1 ** 2)
-    elif operator == '** 0.5':
-        e.insert(0, num1 ** 0.5)
-
+    elif operator == "** 2":
+        e.insert(0, num1**2)
+    elif operator == "** 0.5":
+        e.insert(0, num1**0.5)
+    elif operator == "ttd":
+        e.insert(0, (num1 ** 2) ** 0.5)
     num1 = None
     operator = None
 
@@ -140,7 +172,7 @@ bt_ttd = tk.Button(
     fg="white",
     width=10,
     height=3,
-    command=lambda: ...,
+    command=lambda: ttd(),
 )
 bt_clear = tk.Button(
     text="Clear",

@@ -6,6 +6,7 @@ wd.title("Casio Calculator")
 def bt_click(number: int): 
     e.insert(tk.END, str(number))
 
+
 # define e
 e = tk.Entry(
     width=40, borderwidth=10, justify=tk.RIGHT, bg='green', font='Times 15 bold', fg='white',

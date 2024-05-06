@@ -93,7 +93,7 @@ def sqrt():
     operator = "** 0.5"
 
 
-def ttd():
+def abs_():
     if e.get() == '':
         print('Number 1 is None!')
         return
@@ -101,7 +101,7 @@ def ttd():
     num1 = float(e.get())
     e.delete(0, tk.END)
     global operator
-    operator = "ttd"
+    operator = "abs"
 
 
 # define calculation
@@ -112,7 +112,7 @@ def equal():
     if operator == None:
         print("Operator = None!")
         return
-    elif not (operator == "** 2" or operator == "** 0.5" or operator == "ttd"):
+    elif not (operator == "** 2" or operator == "** 0.5" or operator == "abs"):
         temp = e.get()
         if temp == "":
             print("Case no input!")
@@ -133,7 +133,7 @@ def equal():
         e.insert(0, num1**2)
     elif operator == "** 0.5":
         e.insert(0, num1**0.5)
-    elif operator == "ttd":
+    elif operator == "abs":
         e.insert(0, (num1 ** 2) ** 0.5)
     num1 = None
     operator = None
@@ -165,14 +165,14 @@ bt_mu = tk.Button(
     height=3,
     command=lambda: double(),
 )
-bt_ttd = tk.Button(
-    text="TrTDoi",
+bt_abs = tk.Button(
+    text="abs",
     bg="green",
     font="Times 15 bold",
     fg="white",
     width=10,
     height=3,
-    command=lambda: ttd(),
+    command=lambda: abs_(),
 )
 bt_clear = tk.Button(
     text="Clear",
@@ -339,7 +339,7 @@ e.grid(row=0, column=0, columnspan=4, padx=5, pady=5)  # gắn đối tượng l
 # row 1
 bt_sq.grid(row=1, column=0)
 bt_mu.grid(row=1, column=1)
-bt_ttd.grid(row=1, column=2)
+bt_abs.grid(row=1, column=2)
 bt_clear.grid(row=1, column=3)
 
 # row 2

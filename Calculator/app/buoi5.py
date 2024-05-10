@@ -28,8 +28,8 @@ def bt_click(number: float):
 
 # define operator
 def add():
-    if e.get() == '':
-        print('Number 1 is None!')
+    if e.get() == "":
+        print("Number 1 is None!")
         return
     global num1
     num1 = float(e.get())
@@ -39,8 +39,8 @@ def add():
 
 
 def sub():
-    if e.get() == '':
-        print('Number 1 is None!')
+    if e.get() == "":
+        print("Number 1 is None!")
         return
     global num1
     num1 = float(e.get())
@@ -50,8 +50,8 @@ def sub():
 
 
 def mul():
-    if e.get() == '':
-        print('Number 1 is None!')
+    if e.get() == "":
+        print("Number 1 is None!")
         return
     global num1
     num1 = float(e.get())
@@ -61,8 +61,8 @@ def mul():
 
 
 def div():
-    if e.get() == '':
-        print('Number 1 is None!')
+    if e.get() == "":
+        print("Number 1 is None!")
         return
     global num1
     num1 = float(e.get())
@@ -72,8 +72,8 @@ def div():
 
 
 def double():
-    if e.get() == '':
-        print('Number 1 is None!')
+    if e.get() == "":
+        print("Number 1 is None!")
         return
     global num1
     num1 = float(e.get())
@@ -83,9 +83,9 @@ def double():
 
 
 def sqrt():
-    if e.get() == '':
-        print('Number 1 is None!')
-        return    
+    if e.get() == "":
+        print("Number 1 is None!")
+        return
     global num1
     num1 = float(e.get())
     e.delete(0, tk.END)
@@ -94,8 +94,8 @@ def sqrt():
 
 
 def abs_():
-    if e.get() == '':
-        print('Number 1 is None!')
+    if e.get() == "":
+        print("Number 1 is None!")
         return
     global num1
     num1 = float(e.get())
@@ -134,7 +134,7 @@ def equal():
     elif operator == "** 0.5":
         e.insert(0, num1**0.5)
     elif operator == "abs":
-        e.insert(0, (num1 ** 2) ** 0.5)
+        e.insert(0, (num1**2) ** 0.5)
     num1 = None
     operator = None
 
@@ -366,4 +366,5 @@ bt_add.grid(row=5, column=1)
 bt_sub.grid(row=5, column=2)
 bt_equal.grid(row=5, column=3)
 
-wd.mainloop()
+wd.mainloop(n=0)    # n=0 thi ket thuc vong lap la ket thuc chuong trinh,  n < 0 thi ket thuc vong lap van chua ket thuc chuong trinh, n > 0 thi khong chay vo cua so
+

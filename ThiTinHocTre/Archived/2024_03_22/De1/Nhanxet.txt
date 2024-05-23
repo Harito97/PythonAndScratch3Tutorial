@@ -1,0 +1,3 @@
+Bài 2 code sai: đổi vị trí sai
+Bài 3 code sai: hiểu sai bản chất gán giá trị cho biến (deepcopy, ...)
+(Bài 3 ra đề chưa chặt vì trường hợp output in ra chưa là duy nhất)

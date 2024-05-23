@@ -1,0 +1,7 @@
+Ex1_PhanThiet: ok
+Ex2_PhanThiet: ok
+Ex3_PhanThiet: ok
+
+Ex1_BRVT: ok
+Ex2_BRVT: ok nhung nen tranh goi lai ket qua max(a) nhieu lan gay ton thoi gian tinh toan
+Ex3_BRVT: 

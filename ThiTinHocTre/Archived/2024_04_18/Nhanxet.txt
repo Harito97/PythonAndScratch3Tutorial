@@ -1,0 +1,10 @@
+BinhDinh2023
+Bài 1: Đọc hiểu code
+Bài 2: Làm đúng test mẫu tuy nhiên chưa đảm bảo đúng cho mọi trường hợp test
+Bài 3: Kết quả test mẫu bị sai
+
+QuangNam2021
+Bài 1: Thực hiện đánh giá được tính chất Toán học của vấn đề sẽ giúp code hiệu quả hơn
+Bài 2: Cải thiện độ phức tạp. Tính thêm trường hợp có thêm nhân viên (nhưng không nhân viên cũ nào đi)
+Bài 3: Tối ưu hóa code
+Bài 4: Đọc hiểu code

@@ -1,0 +1,4 @@
+Bài 1 viết biểu thức điều kiện sai
+Bài 2 có thể dùng math.ceil cho nhanh thay cho cái if
+Bài 3 có thể đơn giản hóa giải thuật lại như code thầy
+Bài 4 (xem trong cái thầy chữa)

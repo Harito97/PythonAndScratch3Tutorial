@@ -1,0 +1,7 @@
+Bai 2: use dict() data structure for faster way
+Bai 3: nghien ngam thuat toan thay dung nhe, cai case test cua de bai co van de (phai la 1200 chu khong phai 1000)
+
+Bài Cặp số có thể dùng chia các trường hợp ra thay vì dùng 2 vòng for khiến độ phức tạp đến O(n^2)
+Bài Chia nhóm có thể làm như thầy để giải
+Bài Số đặc biệt em không cần dùng đến 2 vòng for như vậy 
+

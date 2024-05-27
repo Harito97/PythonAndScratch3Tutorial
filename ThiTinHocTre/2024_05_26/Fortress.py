@@ -69,14 +69,58 @@ def read_input_test():
 #     down_price = min(down_price_up, down_price_down)
 #     return up_price + down_price
 
-def process(n: int, k: int, data: list[int]) -> int:
-    ele_needed = [1, n - 1]
-    ele_no_needed = [k - 1, k]
-    data = [-1] + data
-    all_possible = []
-    for i in range(n // 2):
-        ...
-        # dùng giải thuật vét cạn lấy mọi trường hợp: i là số cạnh liên kết bỏ
+
+# def process(n: int, k: int, data: list[int]) -> int:
+#     ele_needed = [1, n - 1]
+#     ele_no_needed = [k - 1, k]
+#     data = [-1] + data
+#     all_possible = []
+#     for i in range(n // 2):
+#         ...
+#         # dùng giải thuật vét cạn lấy mọi trường hợp: i là số cạnh liên kết bỏ
+
+def process(n, k, data):
+    unnecessary = [k - 1, k - 2]
+    unnecessary = set([max(0, x) for x in unnecessary])
+    i = 0
+    while i in unnecessary:
+        i += 1
+    necessary = [i]
+    i = n - 2
+    while i in unnecessary:
+        i -= 1
+    # if i in range(n - 1):
+    #     necessary.append(i)
+    necessary.append(i)
+    print(necessary, unnecessary)
+    # temp = set()
+    # for ele in unnecessary:
+    #     print(ele, ele + 1, ele - 1)
+    #     if ele + 1 in range(n + 1) and ele + 1 not in necessary:
+    #         temp.add(ele + 1)
+    # unnecessary.update(temp)
+    # print(necessary, unnecessary)
+    price = sum(data[ele] for ele in necessary)
+    print(price)
+    not_yet = [i for i in range(1, n - 1) if i not in unnecessary and i not in necessary]
+    print(not_yet)
+    yet = set()
+    for index in necessary:
+        yet.add(index)
+        yet.add(index + 1)
+    while len(not_yet) != 0:
+        min_index = max(not_yet, key=lambda index: data[index])
+        # if min_index in range(n - 1):
+        yet.add(min_index)
+        yet.add(min_index + 1)
+        price += data[min_index]
+        not_yet.remove(min_index)
+        # not_yet = [i for i in not_yet if i not in unnecessary and i not in necessary]
+        print(not_yet, yet)
+    return price
+
+
+
 def main():
     n, k, data = read_input_test()
     print(n, k, data)

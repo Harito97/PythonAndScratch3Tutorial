@@ -13,6 +13,7 @@ e = tk.Entry(
     font="Times 15 bold",
     fg="white",
 )  # tạo đối tượng hộp nhập văn bản
+e.configure(state='disable')
 e.insert(0, "0")
 
 
@@ -23,7 +24,9 @@ operator = None
 
 ## Define function ##
 def bt_click(number: float):
+    e.configure(state='normal')
     e.insert(tk.END, str(number))
+    e.configure(state='disable')
 
 
 # define operator
@@ -33,7 +36,9 @@ def add():
         return
     global num1
     num1 = float(e.get())
+    e.configure(state='normal')
     e.delete(0, tk.END)
+    e.configure(state='disable')
     global operator
     operator = "+"
 
@@ -44,7 +49,9 @@ def sub():
         return
     global num1
     num1 = float(e.get())
+    e.configure(state='normal')
     e.delete(0, tk.END)
+    e.configure(state='disable')
     global operator
     operator = "-"
 
@@ -55,7 +62,9 @@ def mul():
         return
     global num1
     num1 = float(e.get())
+    e.configure(state='normal')
     e.delete(0, tk.END)
+    e.configure(state='disable')
     global operator
     operator = "*"
 
@@ -66,7 +75,9 @@ def div():
         return
     global num1
     num1 = float(e.get())
+    e.configure(state='normal')
     e.delete(0, tk.END)
+    e.configure(state='disable')
     global operator
     operator = "/"
 
@@ -77,7 +88,9 @@ def double():
         return
     global num1
     num1 = float(e.get())
+    e.configure(state='normal')
     e.delete(0, tk.END)
+    e.configure(state='disable')
     global operator
     operator = "** 2"
 
@@ -88,7 +101,9 @@ def sqrt():
         return
     global num1
     num1 = float(e.get())
+    e.configure(state='normal')
     e.delete(0, tk.END)
+    e.configure(state='disable')
     global operator
     operator = "** 0.5"
 
@@ -99,7 +114,9 @@ def abs_():
         return
     global num1
     num1 = float(e.get())
+    e.configure(state='normal')
     e.delete(0, tk.END)
+    e.configure(state='disable')
     global operator
     operator = "abs"
 
@@ -120,6 +137,7 @@ def equal():
         else:
             num2 = float(e.get())
 
+    e.configure(state='normal')
     e.delete(0, tk.END)
     if operator == "+":
         e.insert(0, num1 + num2)
@@ -135,15 +153,22 @@ def equal():
         e.insert(0, num1**0.5)
     elif operator == "abs":
         e.insert(0, (num1**2) ** 0.5)
+    e.configure(state='disable')
     num1 = None
     operator = None
 
 
 # define delete function
 def delete():
+    e.configure(state='normal')
+    e.delete(len(e.get()) - 1, tk.END)
+    e.configure(state='disable')
+
+def AC():
+    e.configure(state='normal')
     e.delete(0, tk.END)
     e.insert(0, "0")
-
+    e.configure(state='disable')
 
 ## UI ##
 # define buttons
@@ -181,7 +206,7 @@ bt_clear = tk.Button(
     fg="white",
     width=10,
     height=3,
-    command=lambda: delete(),
+    command=lambda: AC(),
 )
 
 bt_7 = tk.Button(
@@ -218,7 +243,7 @@ bt_delete = tk.Button(
     fg="white",
     width=10,
     height=3,
-    command=lambda: e.delete(len(e.get()) - 1, tk.END),
+    command=lambda: delete(),
 )
 
 bt_4 = tk.Button(

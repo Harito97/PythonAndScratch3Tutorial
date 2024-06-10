@@ -1,5 +1,16 @@
 import tkinter as tk 
 
+# Hàm dựng, phương thức, thuộc tính
+# AB, BC, CA
+# A, B, C
+# 66.66%
+
+# Bách: C
+# Nam: A
+# Đáp án: B
+
+# Đáp án: 1000 đối tượng trong code, 3000 đối tượng, 
+# Bách chọn 200 đối tượng, Nam chọn 100 tỷ đối tượng
 wd = tk.Tk()
 wd.title('ChatBot')
 

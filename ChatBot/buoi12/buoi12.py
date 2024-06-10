@@ -21,7 +21,7 @@ def computer_response(text):
     
 text_area = tk.Text(width=40, height=20)
 text_box = tk.Text(width=40, height=3)
-button_clear = tk.Button(width=10, height=2, text='Clear all')
+button_clear = tk.Button(width=10, height=2, text='Clear all', command=lambda: text_area.delete('1.0', tk.END))
 button_send = tk.Button(width=10, height=2, text='Send', command=send_text)
 
 text_area.grid(row=0, column=0, padx=(15, 5), pady=5)

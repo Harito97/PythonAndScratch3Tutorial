@@ -10,14 +10,14 @@ def send_text():
     text_box.delete('1.0', tk.END)
     computer_response(user_text)
 
-def computer_response(text): 
+def computer_response(text:str): 
     computer_text = computer.response(text) 
     text_area.insert(tk.END, 'Computer: ' + computer_text) 
     wd.update()
-    computer.speak(computer_text)
+    computer.speak(text=computer_text)
     
 text_area = tk.Text(width=40, height=20)
-text_area.insert(tk.END, 'Computer: Nice to meet you again!') 
+text_area.insert(tk.END, 'Computer: Nice to meet you again!\n') 
 text_box = tk.Text(width=40, height=3)
 button_clear = tk.Button(width=10, height=2, text='Clear all')
 button_send = tk.Button(width=10, height=2, text='Send', command=send_text)

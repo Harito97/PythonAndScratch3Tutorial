@@ -1,3 +1,4 @@
+# /User/.../Project/ChaBot/buoi10.py
 import tkinter as tk
 
 wd = tk.Tk()
@@ -19,6 +20,8 @@ def computer_response(text):
         computer_text = "My name's Harito."
     elif "bye" in text:
         computer_text = "Good bye!"
+    elif ...:
+        ...
     text_area.insert(tk.END, "Computer: " + computer_text)
 
 

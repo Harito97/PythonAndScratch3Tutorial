@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trang thông tin về dịch</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <!--#2a3477-->
+    <div class="row bg-primary justify-content-center align-items-center" style="height: 80px">
+        <h1 style="color:White; font-family:calibri">Tổng hợp thông tin dịch COVID-19</h1>
+    </div>
+    <div class="row" style="height: 40px">
+    </div>
+    <div class="col-8 offset-2">
+        <p>Nguồn số liệu: Báo Dân Trí. Link: <a href="https://dantri.com.vn/suc-khoe/dai-dich-covid-19.htm" target="_blank">https://dantri.com.vn/suc-khoe/dai-dich-covid-19.htm</a></p>
+        <div class="row">
+            <div class="col-lg-12 d-lg-block">
+                <div class="border position-relative" style="margin-top: 17px;">
+                    <span class="position-absolute font-weight-bold">Việt Nam</span>
+                    <div class="row mt-5">
+
+                        <div class="col text-center text-uppercase text-danger">
+                            Tổng số ca nhiễm <br> <span class="font24">{{covid_stat.VN_case}}</span>
+                        </div>
+<!--                        <div class="col text-center text-uppercase text-warning1">-->
+<!--                            Đang điều trị <br> <span class="font24">47</span>-->
+<!--                        </div>-->
+                        <div class="col text-center text-uppercase text-success">
+                            Khỏi <br> <span class="font24">{{ covid_stat.VN_recovery }}</span>
+                        </div>
+                        <div class="col text-center text-uppercase text-danger-new1">
+                            Tử vong <br> <span class="font24">{{ covid_stat.VN_death }}</span>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <span class="box-tg position-absolute font-weight-bold">Thế giới</span>
+                    <div class="row mt-5" style="margin-top: 55px !important;">
+
+                        <div class="col text-center text-uppercase text-danger">
+                            Tổng số ca nhiễm <br> <span class="font24">{{ covid_stat.TG_case }}</span>
+                        </div>
+<!--                        <div class="col text-center text-uppercase text-warning1">-->
+<!--                            Đang nhiễm <br> <span class="font24">8.362.630</span>-->
+<!--                        </div>-->
+                        <div class="col text-center text-uppercase text-success">
+                            Khỏi <br> <span class="font24">{{ covid_stat.TG_recovery }}</span>
+                        </div>
+                        <div class="col text-center text-uppercase text-danger-new1">
+                            Tử vong <br> <span class="font24">{{ covid_stat.TG_death }}</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Nguồn tin tức: Báo Tuổi trẻ. Link: <a href="https://tuoitre.vn/dich-covid-19-e576.htm" target="_blank">https://tuoitre.vn/dich-covid-19-e576.htm</a></p>
+        <br>
+        <h2 class="font-weight-bold" style="text-align:center">Tin tức</h2>
+        <br>
+        {% for article in article_list %}
+        <div class="row bg-light">
+            <div class="col-4 ">
+                <img class="img-fluid" src="{{ article.img_src }}">
+            </div>
+            <div class="col-8 mt-2">
+                <div class="row font-weight-bold" style="font-size: 20px; line-height: 100%;">
+                    {{ article.title }}
+                </div>
+                <br>
+                <div class="row" style="font-size: 16px; ">
+                    {{ article.content }}
+                </div>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+
+    </div>
+</div>
+</body>
+</html>

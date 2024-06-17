@@ -4,6 +4,10 @@ import pyttsx3
 
 engine = pyttsx3.init()
 
+newVoiceRate = 145
+engine.setProperty('rate', newVoiceRate)
+engine.setProperty('volume', 1.0)
+
 def response(text:str):
     computer_text = "Sorry, I don't understand.\n"
     if 'hello' in text:

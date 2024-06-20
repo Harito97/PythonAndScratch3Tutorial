@@ -1,5 +1,8 @@
-Computer: Nice to meet you again!
 You: hello
-
 Computer: Hello.
-
+You: nam
+Computer: Sorry, I don't understand.
+-------------Current-------------
+Computer: Nice to meet you again!
+You: phuong
+Computer: Sorry, I don't understand.

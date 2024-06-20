@@ -16,7 +16,7 @@ def computer_response(text):
     wd.update()
     computer.speak(computer_text)
     f = open('history.txt', 'w')
-    f.write(text_area.get('2.0', tk.END))
+    f.write(text_area.get('3.0', tk.END))
     f.close()
     
 text_area = tk.Text(width=40, height=20)
@@ -39,7 +39,7 @@ else:
     if content == '':
         content = 'Không có lịch sử trò chuyện trước đó!\n'
     else:
-        content = 'Lịch sử trò chuyện trước đó là: \n' + content
+        content = 'Lịch sử trò chuyện trước đó là: \n' + content + '\n'
     text_area.insert('1.0', content)    # hang 1 cot 0
 finally:
     f.close()

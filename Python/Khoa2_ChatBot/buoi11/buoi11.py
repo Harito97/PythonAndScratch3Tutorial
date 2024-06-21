@@ -6,7 +6,7 @@ wd.title('ChatBot')
 
 def send_text():
     user_text = text_box.get('1.0', tk.END)
-    text_area.insert(tk.END, 'You: ' + user_text)
+    text_area.insert(tk.END, '\nYou: ' + user_text)
     text_box.delete('1.0', tk.END)
     computer_response(user_text)
 

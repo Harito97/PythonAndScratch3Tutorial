@@ -8,12 +8,12 @@ newVoiceRate = 145
 engine.setProperty('rate', newVoiceRate)
 engine.setProperty('volume', 1.0)
 
-def response(text:str):
-    computer_text = "Sorry, I don't understand.\n"
+def response(text:str) -> str:
+    computer_text = "Sorry, I don't understand."
     if 'hello' in text:
-        computer_text = "Hello.\n"
+        computer_text = "Hello."
     elif 'name' in text:
-        computer_text = "My name's Harito.\n"
+        computer_text = "My name's Harito."
     return computer_text
     # import time 
     # do st ...

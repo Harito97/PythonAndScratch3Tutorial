@@ -1,0 +1,8 @@
+Computer: Nice to meet you again!
+You: hello
+Computer: Hello.
+You: name
+Computer: My name's Harito.
+You: hi
+Computer: Sorry, I don't understand.
+

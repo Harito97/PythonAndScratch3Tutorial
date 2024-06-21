@@ -41,8 +41,13 @@ else:
     else:
         content = 'Lịch sử trò chuyện trước đó là: \n' + content + '\n'
     text_area.insert('1.0', content)    # hang 1 cot 0
+    # wd.update()
+    # computer.speak(content)
 finally:
     f.close()
 
 text_area.insert(tk.END, '-------------Current-------------\nComputer: Nice to meet you again!\n') 
+wd.update() 
+computer.speak(text='Nice to meet you again!') 
+
 tk.mainloop()

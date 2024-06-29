@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trang_chu', # Add this line to include trang_chu of the app in the project
 ]
 
 MIDDLEWARE = [

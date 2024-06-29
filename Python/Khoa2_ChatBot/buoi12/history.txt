@@ -1,8 +1,5 @@
-You: hello
-Computer: Hello.
-You: nam
+You: name
+Computer: My name's Harito.
+You: bye
 Computer: Sorry, I don't understand.
--------------Current-------------
-Computer: Nice to meet you again!
-You: phuong
-Computer: Sorry, I don't understand.
+

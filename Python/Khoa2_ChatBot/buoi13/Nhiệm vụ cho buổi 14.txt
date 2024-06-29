@@ -1,0 +1,5 @@
+- Làm nút Clear All hoạt động
+- Sửa file computer.py để nó hoạt động nhiều trường hợp hơn
+- Sửa lại code để người dùng không sửa hộp lịch sử trò chuyện được
+
+Xong rồi thuyết trình 1 lượt để thầy chấm điểm CKy

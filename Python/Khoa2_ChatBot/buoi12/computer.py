@@ -1,5 +1,5 @@
-import pyttsx3
-engine = pyttsx3.init()
+# import pyttsx3
+# engine = pyttsx3.init()
 
 def response(text):
     computer_text = "Sorry, I don't understand.\n"
@@ -13,5 +13,6 @@ def response(text):
 
  
 def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+    ...
+    # engine.say(text)
+    # engine.runAndWait()

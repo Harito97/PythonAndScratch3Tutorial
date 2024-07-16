@@ -5,14 +5,14 @@ wd = tk.Tk()
 wd.title('ChatBot')
 
 def send_text():
-    user_text = text_box.get('1.0', tk.END)
+    user_text = text_box.get('1.0', tk.END).strip() + '\n'
     text_area.insert(tk.END, 'You: ' + user_text)
     text_box.delete('1.0', tk.END)
     computer_response(user_text)
 
 def computer_response(text): 
     computer_text = computer.response(text) 
-    text_area.insert(tk.END, 'Computer: ' + computer_text) 
+    text_area.insert(tk.END, 'Computer: ' + computer_text + '\n') 
     wd.update()
     computer.speak(computer_text)
     f = open('history.txt', 'w')

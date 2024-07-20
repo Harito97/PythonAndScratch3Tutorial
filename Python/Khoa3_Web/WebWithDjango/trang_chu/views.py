@@ -5,5 +5,5 @@ from django.http import HttpResponse
 def index(request):
     ...
     # return HttpResponse("Hello, world. You're at the trang chu index.")
-    return render(request, 'web_covid.html')
-
+    # return render(request, 'web_covid.html')
+    return HttpResponse(html_page)

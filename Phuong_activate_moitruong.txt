@@ -1,0 +1,1 @@
+source ../Chatbot/chatbot_python_env/bin/activate
